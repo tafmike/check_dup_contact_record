@@ -48,7 +48,7 @@ foreach ($contacts as $num=>$contact_array) {
 $email_list .= "\r\n";
 
 // send an email to staff
-$sendto = "support@yourdomain.com";   // replace support@yourdomain.com with your email address
+$sendto = "support@yourdomain.com";   // replace support@yourdomain.com with the staff email address
 $message = 'A contact record was just created for someone who seems to have multiple contact records.';
 $message = $message."\r\n\r\nContact Name: ".$fname." ".$lname.".\r\n";
 $message = $message."\r\nThe Email Addresses are:\r\n".$email_list."\r\n";
