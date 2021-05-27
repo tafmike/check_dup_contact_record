@@ -3,16 +3,6 @@ $fname = $_POST['fn'];
 $lname = $_POST['ln'];
 $ipaddr = $_POST['ip'];
 
-if (empty($fname)) { 
-    $fname=$_GET['fn'];
-}
-if (empty($lname)) { 
-    $lname=$_GET['ln'];
-}
-if (empty($ipaddr)) { 
-    $ipaddr=$_GET['ip'];
-}
-
 if (empty($fname)||empty($lname)||empty($ipaddr)) { 
     echo "<h3>Needed information is missing.</h3>";
     exit;
