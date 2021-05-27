@@ -1,5 +1,4 @@
 <?php
-
 $fname = $_POST['fn'];
 $lname = $_POST['ln'];
 $ipaddr = $_POST['ip'];
@@ -45,7 +44,6 @@ if (count($contacts)<2) {
 }
 
 $email_list = '';
-$emails='';
 
 foreach ($contacts as $num=>$contact_array) {
 	if (empty($contact_array["firstname"])) {
@@ -53,16 +51,13 @@ foreach ($contacts as $num=>$contact_array) {
 	} else {
 		$fname = $contact_array["firstname"];
 	}	
-    if (!empty($contact_array["email"])) {  // skip "subscribers" without an email address
+	if (!empty($contact_array["email"])) {  // skip "subscribers" without an email address
 		$email_list .= $contact_array["email"]."\r\n";
-		$emails .= $contact_array["email"].",";
 	}
 }
 $email_list .= "\r\n";
-$emails = rtrim($emails,",");
 
-
-// email support
+// send an email to staff
 $sendto = "support@yourdomain.com";   // replace support@yourdomain.com with your email address
 $message = 'A contact record was just created for someone who seems to have multiple contact records.';
 $message = $message."\r\n\r\nContact Name: ".$fname." ".$lname.".\r\n";
@@ -71,5 +66,4 @@ $message = $message.'<a href="https://app.ontraport.com/#!/contact/listAll&searc
 $msgsubject = "Contact with Multiple Records";
 // Send
 mail($sendto, $msgsubject, $message);
-
 ?>
