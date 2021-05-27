@@ -62,7 +62,7 @@ $sendto = "support@yourdomain.com";   // replace support@yourdomain.com with you
 $message = 'A contact record was just created for someone who seems to have multiple contact records.';
 $message = $message."\r\n\r\nContact Name: ".$fname." ".$lname.".\r\n";
 $message = $message."\r\nThe Email Addresses are:\r\n".$email_list."\r\n";
-$message = $message.'<a href="https://app.ontraport.com/#!/contact/listAll&search='.$fname.'+'.$lname.'">Go into Ontraport and merge the records</a>'."\r\n\r\n";
+$message = $message.'<a href="https://app.ontraport.com/#!/contact/listAll&search='.$fname.'+'.$lname.'">Check the contact records in Ontraport</a>'."\r\n\r\n";
 $msgsubject = "Contact with Multiple Records";
 // Send
 mail($sendto, $msgsubject, $message);
