@@ -5,3 +5,5 @@ Put the script on your PHP-enabled webserver and then reference it from an Ontra
 Use the Trigger: "Contact is created". 
 Data to send to the webhook using the POST webhook method:
 fn=[First Name]&ln=[Last Name]&ip=[IP Address]
+
+The author of this script assumes no liability related to the use of this script.
